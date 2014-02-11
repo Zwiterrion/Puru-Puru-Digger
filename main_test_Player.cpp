@@ -15,6 +15,12 @@ int main(){
     std::cout << "x : " << j2.get_x() << std::endl ; 
     std::cout << "y : " << j2.get_y() << std::endl ; 
 
+    std::cout << "Gestion des cardinalités pour le déplacement" << std::endl ; 
+    
+    std::cout << "le pointeur pointe sur : " << j1.get_direction() << std::endl ;
+
+    
+
     return EXIT_SUCCESS;
 }
 

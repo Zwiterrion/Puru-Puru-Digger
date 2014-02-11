@@ -46,6 +46,10 @@ void GameModel::Display() const{
     cout << "|" <<endl ; 
 }
 
-void GameModel::set_player(int x, int y){  // inutilisé
+void GameModel::set_player(int x, int y){
     m_matrice[y][x]=elem[7];
+}
+
+void GameModel::set_move(int x, int y){
+    m_matrice[y][x]=elem[8];
 }

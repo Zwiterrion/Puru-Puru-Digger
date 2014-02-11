@@ -17,6 +17,7 @@ class GameModel{
         ~GameModel();                   //done
         void Display() const;           // juste la grille
         void set_player(int x, int y);  //done
+        void set_move(int x, int y);    // done 
         int set_score(int score);       // non fait
         int set_targer(int target);     // non fait
 };

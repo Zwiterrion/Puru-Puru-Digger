@@ -4,7 +4,6 @@
 
 #include "Player.h"
 
-
 /* class Player
  *
  * Player() : Constructeur par défaut qui choisi aléatoirement l'abscisse et l'ordonnée du joueur
@@ -13,18 +12,13 @@
  * int get_y : accesseur à l'ordonnée du joueur
  */
 Player::Player(){
-    std::cout << "constructeur par défaut"<< std::endl ;
     srand(time(NULL));
-    m_pos_x=rand()%(18);
-    std::cout << "m_pos_x : "<<m_pos_x<<std::endl ;
+    m_pos_x=rand()%(18); // génère un nombre aléatoire entre 0 et 17 inclus
     m_pos_y=rand()%(18);
-    std::cout << "m_pos_y : "<<m_pos_y<<std::endl ;
+    m_pointeur_pt_card=&m_pt_cardinaux[0][0];
 }
 
 Player::Player(int x, int y){
-    std::cout << "constructeur paramétrer" << std::endl;
-    std::cout << "x : " << x << std::endl;
-    std::cout << "y : " << y << std::endl;
     do{
         if(!(x>= 0 && x<=18)) {
             std::cout << "x : " ;
@@ -40,6 +34,7 @@ Player::Player(int x, int y){
     while ((x<0 || x>18) || (y<0 || y>18));
     m_pos_x=x;
     m_pos_y=y;
+    m_pointeur_pt_card=&m_pt_cardinaux[0][0];
 }
 
 Player::~Player(){}
@@ -51,4 +46,16 @@ int Player::get_x() const{
 int Player::get_y() const{
     return m_pos_y;
 }
+
+void Player::set_direction(int *p){
+   m_pointeur_pt_card=p;
+}
+
+int* Player::get_direction()const{
+    std::cout << "Adresse du tableau : "<< &m_pt_cardinaux << std::endl;
+    std::cout << "Pointeur sur le tableau : "<< m_pointeur_pt_card << std::endl;
+    return m_pointeur_pt_card;
+}
+
+
 
