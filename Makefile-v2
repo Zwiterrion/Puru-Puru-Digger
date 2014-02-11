@@ -1,0 +1,26 @@
+CPP = g++
+LINK = g++
+MKDIR = mkdir -p
+RM = rm -f
+CPPFLAGS = 
+LIBS = 
+BIN= bin/digger
+OBJ= obj/main_test_Player_GameModel.o obj/Player.o obj/GameModel.o
+
+
+all: $(BIN)
+	$(BIN)
+
+clean:
+	$(RM) $(OBJ) $(BIN)
+
+bin:
+	$(MKDIR) bin
+obj:
+	$(MKDIR) obj
+
+$(BIN): $(OBJ) bin obj
+	$(LINK) $(OBJ) -o $(BIN) $(LIBS)
+
+obj/%.o: src/%.cc src/Player.h src/GameModel.h obj
+	$(CPP) -cpp $< -o $@ $(CPPFLAGS)
