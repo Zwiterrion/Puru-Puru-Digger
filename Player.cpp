@@ -4,6 +4,14 @@
 
 #include "Player.h"
 
+
+/* class Player
+ *
+ * Player() : Constructeur par défaut qui choisi aléatoirement l'abscisse et l'ordonnée du joueur
+ * Player(int x, int y) : Constructeur paramétré qui défini la position du joueur dans la matrice
+ * int get_x : accesseur à l'abscisse du joueur
+ * int get_y : accesseur à l'ordonnée du joueur
+ */
 Player::Player(){
     std::cout << "constructeur par défaut"<< std::endl ;
     srand(time(NULL));

@@ -8,6 +8,14 @@
 
 using namespace std;
 
+
+/* GameModel
+ *
+ * - le constructeur par défaut : génère toutes les cases du tableaux
+ * - Display : affiche la matrice soit le jeu
+ * - set_player : permet de placer le joueur sur le plateau
+ */
+
 GameModel::GameModel(){
     srand(time(NULL));
     for(int i=0; i<18; i++){
@@ -38,6 +46,6 @@ void GameModel::Display() const{
     cout << "|" <<endl ; 
 }
 
-void GameModel::set_player(int x, int y){
+void GameModel::set_player(int x, int y){  // inutilisé
     m_matrice[y][x]=elemen[7];
 }
