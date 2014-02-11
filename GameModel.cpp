@@ -47,5 +47,5 @@ void GameModel::Display() const{
 }
 
 void GameModel::set_player(int x, int y){  // inutilisé
-    m_matrice[y][x]=elemen[7];
+    m_matrice[y][x]=elem[7];
 }
